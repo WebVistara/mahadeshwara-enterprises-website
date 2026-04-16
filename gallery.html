@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Gallery | Mahadeshwara Enterprises · Rock Cutting & Demolition</title>
+    <!-- SEO meta -->
+    <meta name="description"
+        content="Project gallery showcasing rock cutting, excavation, demolition, construction site operations, and heavy machinery usage by Mahadeshwara Enterprises in Bangalore.">
+    <!-- Tailwind + custom industrial style -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+            color: #1e1e1e;
+        }
+
+        .industrial-red {
+            background-color: #dc2626;
+        }
+
+        .text-industrial-red {
+            color: #dc2626;
+        }
+
+        .border-industrial-red {
+            border-color: #dc2626;
+        }
+
+        .hover-red:hover {
+            background-color: #b91c1c;
+            transition: 0.2s;
+        }
+
+        /* floating buttons */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+        }
+
+        .whatsapp-float:hover {
+            background: #20b859;
+            transform: scale(1.05);
+        }
+
+        .call-now-btn {
+            background: #fbbf24;
+            color: black;
+            font-weight: 700;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 2px solid #dc2626;
+        }
+
+        /* animations */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.7s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .hidden-init {
+            opacity: 0;
+        }
+
+        /* hover lift for cards */
+        .hover-lift {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 30px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* mobile menu */
+        .mobile-nav {
+            display: none;
+        }
+
+        .mobile-nav.open {
+            display: flex;
+            flex-direction: column;
+            background: white;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            padding: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-top: 2px solid #dc2626;
+            z-index: 100;
+        }
+
+        .mobile-nav a {
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            color: #1e1e1e;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .mobile-nav a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-nav a:hover {
+            background-color: #fef2f2;
+            color: #dc2626;
+        }
+
+        /* gmap embed */
+        .gmap-responsive {
+            overflow: hidden;
+            padding-bottom: 50%;
+            position: relative;
+            height: 0;
+        }
+
+        .gmap-responsive iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+
+        /* Lightbox overlay */
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border: 4px solid #fbbf24;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        #lightbox .close-lightbox {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        #lightbox .close-lightbox:hover {
+            color: #dc2626;
+        }
+
+        #lightbox .caption {
+            color: white;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+        }
+
+        /* loader */
+#page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.4s ease, visibility 0.4s;
+}
+
+#page-loader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #dc2626;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- PAGE LOADER -->
+    <div id="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Floating WhatsApp & Call -->
+    <a href="https://wa.me/919845089210?text=Hello%20Mahadeshwara%20Enterprises%2C%20I%20need%20a%20quotation%20for%20rock%20cutting%2Fdemolition."
+        class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:9845089210"
+        class="fixed bottom-24 right-5 bg-yellow-400 text-black px-4 py-3 rounded-full font-bold shadow-xl z-50 flex items-center gap-2 border-2 border-red-600 md:hidden">
+        <i class="fa-solid fa-phone-alt"></i> CALL NOW
+    </a>
+
+    <!-- ===== HEADER (consistent with theme) ===== -->
+    <header class="bg-white shadow-md sticky top-0 z-40 border-t-4 border-red-600">
+        <div class="container mx-auto px-4 md:px-6 py-3 flex flex-wrap items-center justify-between">
+            <!-- Logo -->
+        <div class="flex items-center mb-6">
+            <img src="images/melogio-removebg-preview.webp" alt="Mahadeshwara Logo"
+                class="h-12 md:h-16 lg:h-20 w-auto object-contain">
+        </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6 font-semibold text-gray-700">
+                <a href="index.html" class="hover:text-red-600">Home</a>
+                <a href="about.html" class="hover:text-red-600">About</a>
+                <a href="services.html" class="hover:text-red-600">Services</a>
+                <a href="machinenry.html" class="hover:text-red-600">Machinery</a>
+                <a href="gallery.html" class="hover:text-red-600 nav-active border-b-3 border-red-600">Gallery</a>
+                <a href="projects.html" class="hover:text-red-600">Projects</a>
+                <a href="faq.html" class="hover:text-red-600">FAQ</a>
+                <a href="contact.html" class="hover:text-red-600">Contact</a>
+            </nav>
+
+            <!-- Desktop CTA -->
+            <div class="hidden md:flex items-center gap-3">
+                <a href="tel:9845089210"
+                    class="flex items-center gap-1 bg-gray-100 px-4 py-2 rounded-full font-medium"><i
+                        class="fas fa-phone-alt text-red-600"></i> 98450 89210</a>
+                <a href="contact.html"
+                    class="industrial-red text-white px-5 py-2 rounded-full font-semibold text-sm hover:bg-red-700">Get
+                    Quote</a>
+            </div>
+
+            <!-- Mobile menu button (hamburger) -->
+            <button id="mobileMenuBtn" class="block md:hidden text-3xl text-red-600 focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobileNav" class="mobile-nav md:hidden">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="machinenry.html">Machinery</a>
+            <a href="gallery.html" class="text-red-600 font-bold">Gallery</a>
+            <a href="projects.html">Projects</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <a href="tel:9845089210" class="text-red-600 font-bold"><i class="fas fa-phone-alt mr-2"></i>98450 89210</a>
+        </div>
+    </header>
+
+    <main class="overflow-hidden">
+
+        <!-- Hero Section -->
+        <section class="relative bg-black text-white hidden-init" data-animate="fadeIn"
+            style="background-image: url('images/jcb.webp'); background-size: cover; background-position: center;">
+            <div class="hero-overlay absolute inset-0 bg-black/60"></div>
+            <div class="container mx-auto px-6 py-20 md:py-28 relative z-10 text-center">
+                <h1 class="text-4xl md:text-5xl font-black text-yellow-400">Project Gallery</h1>
+                <p class="text-xl text-gray-200 mt-2 max-w-2xl mx-auto">A glimpse of our work across Bangalore</p>
+            </div>
+        </section>
+
+        <!-- Gallery Grid -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- 1. Rock cutting work -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-lift hidden-init"
+                        data-animate="fadeInUp">
+                        <img src="images/rock.webp"
+                            alt="Rock cutting work" class="h-56 w-full object-cover cursor-pointer gallery-img"
+                            data-caption="Diamond rock cutting at Whitefield site">
+                        <div class="p-4 flex justify-between items-center">
+                            <h3 class="font-bold text-lg">Rock Cutting</h3>
+                            <i class="fas fa-search-plus text-red-600 cursor-pointer gallery-icon"
+                                data-img="images/rock.webp"
+                                data-caption="Diamond rock cutting at Whitefield site"></i>
+                        </div>
+                    </div>
+
+                    <!-- 2. Excavation work -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-lift hidden-init"
+                        data-animate="fadeInUp">
+                        <img src="images/s1.webp"
+                            alt="Excavation work" class="h-56 w-full object-cover cursor-pointer gallery-img"
+                            data-caption="Deep excavation for commercial complex, Yeshwanthpur">
+                        <div class="p-4 flex justify-between items-center">
+                            <h3 class="font-bold text-lg">Excavation</h3>
+                            <i class="fas fa-search-plus text-red-600 cursor-pointer gallery-icon"
+                                data-img="images/s1.webp"
+                                data-caption="Deep excavation for commercial complex, Yeshwanthpur"></i>
+                        </div>
+                    </div>
+
+                    <!-- 3. Demolition work -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-lift hidden-init"
+                        data-animate="fadeInUp">
+                        <img src="images/demolition.webp"
+                            alt="Demolition work" class="h-56 w-full object-cover cursor-pointer gallery-img"
+                            data-caption="Controlled demolition of old structure, Electronic City">
+                        <div class="p-4 flex justify-between items-center">
+                            <h3 class="font-bold text-lg">Demolition</h3>
+                            <i class="fas fa-search-plus text-red-600 cursor-pointer gallery-icon"
+                                data-img="images/demolition.webp"
+                                data-caption="Controlled demolition of old structure, Electronic City"></i>
+                        </div>
+                    </div>
+
+                    <!-- 4. Construction site operations -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-lift hidden-init"
+                        data-animate="fadeInUp">
+                        <img src="images/site.webp"
+                            alt="Construction site operations"
+                            class="h-56 w-full object-cover cursor-pointer gallery-img"
+                            data-caption="Concrete cutting and site preparation, Hebbal">
+                        <div class="p-4 flex justify-between items-center">
+                            <h3 class="font-bold text-lg">Site Operations</h3>
+                            <i class="fas fa-search-plus text-red-600 cursor-pointer gallery-icon"
+                                data-img="images/site.webp"
+                                data-caption="Concrete cutting and site preparation, Hebbal"></i>
+                        </div>
+                    </div>
+
+                    <!-- 5. Heavy machinery usage (JCB) -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-lift hidden-init"
+                        data-animate="fadeInUp">
+                        <img src="images/new-product.webp"
+                            alt="JCB Mini Excavator in use" class="h-56 w-full object-cover cursor-pointer gallery-img"
+                            data-caption="JCB mini excavator working in narrow site, Rajajinagar">
+                        <div class="p-4 flex justify-between items-center">
+                            <h3 class="font-bold text-lg">JCB Mini Excavator</h3>
+                            <i class="fas fa-search-plus text-red-600 cursor-pointer gallery-icon"
+                                data-img="images/new-product.webp"
+                                data-caption="JCB mini excavator working in narrow site, Rajajinagar"></i>
+                        </div>
+                    </div>
+
+                    <!-- 6. Heavy machinery usage (Excavator) -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-lift hidden-init"
+                        data-animate="fadeInUp">
+                        <img src="images/s9.webp"
+                            alt="Large excavator" class="h-56 w-full object-cover cursor-pointer gallery-img"
+                            data-caption="30-ton excavator for mass excavation, Mysore Road">
+                        <div class="p-4 flex justify-between items-center">
+                            <h3 class="font-bold text-lg">Heavy Excavator</h3>
+                            <i class="fas fa-search-plus text-red-600 cursor-pointer gallery-icon"
+                                data-img="images/s9.webp"
+                                data-caption="30-ton excavator for mass excavation, Mysore Road"></i>
+                        </div>
+                    </div>
+
+                    <!-- 7. Additional rock cutting (variety) -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-lift hidden-init"
+                        data-animate="fadeInUp">
+                        <img src="images/s4.avif"
+                            alt="Rock splitting" class="h-56 w-full object-cover cursor-pointer gallery-img"
+                            data-caption="Chemical rock splitting at Sarjapur road">
+                        <div class="p-4 flex justify-between items-center">
+                            <h3 class="font-bold text-lg">Chemical Rock Cutting</h3>
+                            <i class="fas fa-search-plus text-red-600 cursor-pointer gallery-icon"
+                                data-img="images/s4/avif"
+                                data-caption="Chemical rock splitting at Sarjapur road"></i>
+                        </div>
+                    </div>
+
+                    <!-- 8. Demolition with breaker -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-lift hidden-init"
+                        data-animate="fadeInUp">
+                        <img src="images/heavymachine.webp"
+                            alt="Hydraulic breaker" class="h-56 w-full object-cover cursor-pointer gallery-img"
+                            data-caption="Hydraulic breaker in action, Bannerghatta Road">
+                        <div class="p-4 flex justify-between items-center">
+                            <h3 class="font-bold text-lg">Breaker Operation</h3>
+                            <i class="fas fa-search-plus text-red-600 cursor-pointer gallery-icon"
+                                data-img="images/heavymachine.webp"
+                                data-caption="Hydraulic breaker in action, Bannerghatta Road"></i>
+                        </div>
+                    </div>
+
+                    <!-- 9. Site preparation -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-lift hidden-init"
+                        data-animate="fadeInUp">
+                        <img src="images/leveling.webp"
+                            alt="Site leveling" class="h-56 w-full object-cover cursor-pointer gallery-img"
+                            data-caption="Site leveling with JCB, Yelahanka">
+                        <div class="p-4 flex justify-between items-center">
+                            <h3 class="font-bold text-lg">Site Leveling</h3>
+                            <i class="fas fa-search-plus text-red-600 cursor-pointer gallery-icon"
+                                data-img="images/leveling.webp"
+                                data-caption="Site leveling with JCB, Yelahanka"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox overlay -->
+        <div id="lightbox" onclick="closeLightbox(event)">
+            <span class="close-lightbox" onclick="closeLightbox(event)">&times;</span>
+            <img id="lightbox-img" src="" alt="">
+            <div id="lightbox-caption" class="caption"></div>
+        </div>
+
+        <!-- Call to action (optional) -->
+        <section class="py-12 bg-white hidden-init" data-animate="fadeInUp">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-4">Want to see more?</h2>
+                <p class="text-gray-600 mb-6">Visit our site or contact us for a live demonstration.</p>
+                <a href="contact.html"
+                    class="industrial-red text-white px-8 py-3 rounded-full font-semibold hover:bg-red-700">Request Site
+                    Visit</a>
+            </div>
+        </section>
+
+        <!-- Contact / Inquiry Section (same as previous, linking to index) -->
+    <footer class="bg-white text-black py-12 border-t-4 border-red-600 hidden-init" data-animate="fadeInUp">
+        <div class="container mx-auto px-4 sm:px-6 grid md:grid-cols-4 gap-8">
+            <div>
+                <a href="index.html"><img src="images/melogio-removebg-preview.webp" alt="mahadeshwara enterprises Logo"
+                        class="h-21 mr-2"></a>
+                <p class="text-sm opacity-80">Rock cutting & demolition experts.</p>
+                <p class="text-sm opacity-80">Precision since 1994.</p>
+    
+                <div class="mt-4">
+                    <h4 class="font-bold mb-2 text-red-600">Follow us</h4>
+                    <div class="flex space-x-4 text-2xl">
+                        <a href="#" class="hover:text-red-600"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-red-600"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-red-600"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="hover:text-red-600"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-red-600"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-red-600">Quick links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-red-600">Home</a></li>
+                    <li><a href="about.html" class="hover:text-red-600">About</a></li>
+                    <li><a href="services.html" class="hover:text-red-600">Services</a></li>
+                    <li><a href="machinenry.html" class="hover:text-red-600">Machinery</a></li>
+                    <li><a href="gallery.html" class="hover:text-red-600">Gallery</a></li>
+                    <li><a href="projects.html" class="hover:text-red-600">Projects</a></li>
+    
+                    <li><a href="faq.html" class="hover:text-red-600">FAQ</a></li>
+                    <li><a href="contact.html" class="hover:text-red-600">Contact</a></li>
+    
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-red-600">Services</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="services.html" class="hover:text-red-600">Rock Cutting</a></li>
+                    <li><a href="services.html" class="hover:text-red-600">Concrete Cutting</a></li>
+                    <li><a href="services.html" class="hover:text-red-600">Diamond Rock Cutting</a></li>
+                    <li><a href="services.html" class="hover:text-red-600">Rock Cutting – Chemical Method</a></li>
+                    <li><a href="services.html" class="hover:text-red-600">Concrete Pile Breaking Service</a></li>
+                    <li><a href="services.html" class="hover:text-red-600">Core Cutting Service</a></li>
+                    <li><a href="services.html" class="hover:text-red-600">Rock Control Blasting</a></li>
+                    <li><a href="services.html" class="hover:text-red-600">Demolition Services</a></li>
+                    <li><a href="services.html" class="hover:text-red-600">Soil Excavation</a></li>
+                    <li><a href="services.html" class="hover:text-red-600">JCB Mini Excavator</a></li>
+                    <li><a href="services.html" class="hover:text-red-600">Excavators on Hire</a></li>
+                    <li><a href="services.html" class="hover:text-red-600">Power Zenset</a></li>
+                    <li><a href="services.html" class="hover:text-red-600">Hitech Breaker</a></li>
+                    <li><a href="services.html" class="hover:text-red-600">Tractor Compressor</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4 class="font-bold mb-4 text-red-600">Get in touch</h4>
+                <div class="flex items-start gap-2 mb-2"><i class="fas fa-map-marker-alt text-red-500 mt-1"></i><a
+                        href="https://maps.google.com/?q=#45 Nagarakatte Village NG Halli Post Hosadurga Chitradurga Karnataka 577526"
+                        target="_blank" class="hover:text-red-600">#26, 10th Cross, 1st Main, Rajiv Gandhinagar,
+                        Laggere,Bangalore 560059</a>
+    
+    
+    
+                </div>
+                <div class="flex items-center gap-2 mb-2"><i class="fas fa-phone-alt text-red-500"></i><a
+                        href="tel:+917795404443" class="hover:text-red-600">+91 98450 89210</a></div>
+                <div class="flex items-center gap-2 mb-2"><i class="fas fa-envelope text-red-500"></i><a
+                        href="mailto:info@nisargareservices.com" class="hover:text-red-600">info@mahadeshwara.in</a></div>
+    
+            </div>
+        </div>
+        <div class="border-t border-gray-300 mt-8 pt-4 text-center text-sm px-2">
+            © 2025 <a href="index.html" target="_blank" style="text-decoration:none; color:inherit;">Mahadeshwara
+                Enterprises</a>. All
+            rights reserved | Designed and Developed By <a href="https://www.webvistara.co.in/" target="_blank"
+                style="text-decoration:none; color:#dc2626;">Web Vistara</a>
+        </div>
+    </footer>
+    <script>
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+
+        function openLightbox(src, caption) {
+            lightboxImg.src = src;
+            lightboxCaption.textContent = caption;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // prevent scrolling
+        }
+
+        function closeLightbox(e) {
+            // if click on overlay or close button
+            if (e.target === lightbox || e.target.classList.contains('close-lightbox')) {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Attach click events to gallery images and icons
+        document.querySelectorAll('.gallery-img, .gallery-icon').forEach(el => {
+            el.addEventListener('click', function (e) {
+                let imgSrc, caption;
+                if (this.classList.contains('gallery-img')) {
+                    imgSrc = this.src;
+                    caption = this.dataset.caption || 'Mahadeshwara Enterprises';
+                } else {
+                    // icon: get data attributes
+                    imgSrc = this.dataset.img;
+                    caption = this.dataset.caption || 'Mahadeshwara Enterprises';
+                }
+                openLightbox(imgSrc, caption);
+            });
+        });
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        if (menuBtn && mobileNav) {
+            menuBtn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                mobileNav.classList.toggle('open');
+                const icon = menuBtn.querySelector('i');
+                if (mobileNav.classList.contains('open')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+            // close on link click
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileNav.classList.remove('open');
+                    const icon = menuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+        }
+
+        // Scroll animations
+        const animatedElements = document.querySelectorAll('.hidden-init');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const animationType = entry.target.dataset.animate || 'fadeInUp';
+                    entry.target.classList.add(`animate-${animationType}`);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -20px 0px' });
+        animatedElements.forEach(el => observer.observe(el));
+
+        // Smooth scroll for anchor links (only for internal hashes, external links will navigate)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href').length > 1 && !this.getAttribute('href').includes('index.html#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+
+        window.addEventListener('load', function () {
+                const loader = document.getElementById('page-loader');
+                if (loader) loader.classList.add('fade-out');
+            });
+
+    </script>
+</body>
+
+</html>

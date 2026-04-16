@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Services | Mahadeshwara Enterprises · Rock Cutting & Demolition</title>
+    <!-- SEO meta -->
+    <meta name="description" content="Explore our 14+ professional services: rock cutting, concrete cutting, demolition, JCB hire, chemical rock splitting, core cutting, and more in Bangalore.">
+    <!-- Tailwind + custom industrial style -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', system-ui, sans-serif; }
+        body { background: #ffffff; color: #1e1e1e; }
+        .industrial-red { background-color: #dc2626; }
+        .text-industrial-red { color: #dc2626; }
+        .border-industrial-red { border-color: #dc2626; }
+        .hover-red:hover { background-color: #b91c1c; transition: 0.2s; }
+
+        /* floating buttons */
+        .whatsapp-float {
+            position: fixed; bottom: 25px; right: 25px; background: #25D366; color: white;
+            width: 60px; height: 60px; border-radius: 50%; text-align: center; font-size: 30px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3); z-index: 50;
+            display: flex; align-items: center; justify-content: center; transition: 0.2s;
+        }
+        .whatsapp-float:hover { background: #20b859; transform: scale(1.05); }
+        .call-now-btn {
+            background: #fbbf24; color: black; font-weight: 700; padding: 0.5rem 1rem;
+            border-radius: 30px; display: inline-flex; align-items: center; gap: 0.5rem;
+            border: 2px solid #dc2626;
+        }
+
+        /* animations */
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .animate-fadeInUp { animation: fadeInUp 0.7s cubic-bezier(0.2,0.9,0.3,1) forwards; }
+        .animate-fadeIn { animation: fadeIn 0.8s ease forwards; }
+        .hidden-init { opacity: 0; }
+
+        /* hover lift for cards */
+        .hover-lift { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+        .hover-lift:hover { transform: translateY(-6px); box-shadow: 0 25px 30px -12px rgba(0,0,0,0.15); }
+
+        /* mobile menu */
+        .mobile-nav { display: none; }
+        .mobile-nav.open { display: flex; flex-direction: column; background: white; position: absolute; top: 100%; left: 0; width: 100%; padding: 1rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border-top: 2px solid #dc2626; z-index: 100; }
+        .mobile-nav a { padding: 0.75rem 1rem; font-weight: 600; color: #1e1e1e; border-bottom: 1px solid #f0f0f0; }
+        .mobile-nav a:last-child { border-bottom: none; }
+        .mobile-nav a:hover { background-color: #fef2f2; color: #dc2626; }
+
+        /* gmap embed */
+        .gmap-responsive { overflow: hidden; padding-bottom: 50%; position: relative; height: 0; }
+        .gmap-responsive iframe { left: 0; top: 0; height: 100%; width: 100%; position: absolute; }
+
+
+        /* loader */
+#page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.4s ease, visibility 0.4s;
+}
+
+#page-loader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #dc2626;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- PAGE LOADER -->
+    <div id="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Floating WhatsApp & Call -->
+    <a href="https://wa.me/919845089210?text=Hello%20Mahadeshwara%20Enterprises%2C%20I%20need%20a%20quotation%20for%20rock%20cutting%2Fdemolition." class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:9845089210" class="fixed bottom-24 right-5 bg-yellow-400 text-black px-4 py-3 rounded-full font-bold shadow-xl z-50 flex items-center gap-2 border-2 border-red-600 md:hidden">
+        <i class="fa-solid fa-phone-alt"></i> CALL NOW
+    </a>
+
+    <!-- ===== HEADER (consistent with theme) ===== -->
+    <header class="bg-white shadow-md sticky top-0 z-40 border-t-4 border-red-600">
+        <div class="container mx-auto px-4 md:px-6 py-3 flex flex-wrap items-center justify-between">
+            <!-- Logo -->
+        <div class="flex items-center mb-6">
+            <img src="images/melogio-removebg-preview.webp" alt="Mahadeshwara Logo"
+                class="h-12 md:h-16 lg:h-20 w-auto object-contain">
+        </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6 font-semibold text-gray-700">
+                <a href="index.html" class="hover:text-red-600">Home</a>
+                <a href="about.html" class="hover:text-red-600">About</a>
+                <a href="services.html" class="hover:text-red-600 nav-active border-b-3 border-red-600">Services</a>
+                <a href="machinenry.html" class="hover:text-red-600">Machinery</a>
+                <a href="gallery.html" class="hover:text-red-600">Gallery</a>
+                <a href="projects.html" class="hover:text-red-600">Projects</a>
+                <a href="faq.html" class="hover:text-red-600">FAQ</a>
+                <a href="contact.html" class="hover:text-red-600">Contact</a>
+            </nav>
+
+            <!-- Desktop CTA -->
+            <div class="hidden md:flex items-center gap-3">
+                <a href="tel:9845089210" class="flex items-center gap-1 bg-gray-100 px-4 py-2 rounded-full font-medium"><i class="fas fa-phone-alt text-red-600"></i> 98450 89210</a>
+                <a href="contact.html" class="industrial-red text-white px-5 py-2 rounded-full font-semibold text-sm hover:bg-red-700">Get Quote</a>
+            </div>
+
+            <!-- Mobile menu button (hamburger) -->
+            <button id="mobileMenuBtn" class="block md:hidden text-3xl text-red-600 focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobileNav" class="mobile-nav md:hidden">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html" class="text-red-600 font-bold">Services</a>
+            <a href="machinenry.html">Machinery</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="projects.html">Projects</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <a href="tel:9845089210" class="text-red-600 font-bold"><i class="fas fa-phone-alt mr-2"></i>98450 89210</a>
+        </div>
+    </header>
+
+    <main class="overflow-hidden">
+
+        <!-- Hero Section -->
+        <section class="relative bg-black text-white hidden-init" data-animate="fadeIn" style="background-image: url('images/jcb.webp'); background-size: cover; background-position: center;">
+            <div class="hero-overlay absolute inset-0 bg-black/60"></div>
+            <div class="container mx-auto px-6 py-20 md:py-28 relative z-10 text-center">
+                <h1 class="text-4xl md:text-5xl font-black text-yellow-400">Our Services</h1>
+                <p class="text-xl text-gray-200 mt-2 max-w-2xl mx-auto">Comprehensive rock cutting, demolition & excavation solutions</p>
+            </div>
+        </section>
+
+        <!-- Services Grid (14 cards) -->
+    <!-- SERVICES SECTION -->
+<!-- Services Grid (14 cards) with detailed pointwise information -->
+<section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold">What <span class="text-red-600">We Offer</span></h2>
+            <p class="text-gray-600 mt-2">Professional equipment, skilled operators, and a safety-first approach.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- 1. Rock Cutting -->
+            <article class="bg-white rounded-lg shadow-md overflow-hidden hover-lift hidden-init flex flex-col"
+                data-animate="fadeInUp">
+                <img src="images/s1.webp" alt="Diamond blade cutting rock boulders" class="h-44 w-full object-cover">
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2">Rock Cutting</h3>
+                    <ul class="text-sm text-gray-600 mb-4 list-disc pl-5 space-y-1">
+                        <li>Diamond blade technology for precision cuts</li>
+                        <li>Effective on boulders and rocky terrain</li>
+                        <li>Low vibration and reduced noise</li>
+                        <li>Suitable for excavation and trenching</li>
+                    </ul>
+                    <a href="contact.html"
+                        class="mt-auto inline-block bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold text-center hover:bg-red-700 transition self-start">Inquiry
+                        →</a>
+                </div>
+            </article>
+
+            <!-- 2. Concrete Cutting -->
+            <article class="bg-white rounded-lg shadow-md overflow-hidden hover-lift hidden-init flex flex-col"
+                data-animate="fadeInUp">
+                <img src="images/s2.webp" alt="Saw cutting concrete wall" class="h-44 w-full object-cover">
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2">Concrete Cutting</h3>
+                    <ul class="text-sm text-gray-600 mb-4 list-disc pl-5 space-y-1">
+                        <li>Precision sawing of walls, floors, structures</li>
+                        <li>Dust-free and controlled cutting methods</li>
+                        <li>Ideal for renovations and expansions</li>
+                        <li>Minimal disturbance to surrounding areas</li>
+                    </ul>
+                    <a href="contact.html"
+                        class="mt-auto inline-block bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold text-center hover:bg-red-700 transition self-start">Inquiry
+                        →</a>
+                </div>
+            </article>
+
+            <!-- 3. Diamond Rock Cutting -->
+            <article class="bg-white rounded-lg shadow-md overflow-hidden hover-lift hidden-init flex flex-col"
+                data-animate="fadeInUp">
+                <img src="images/s3.webp" alt="Diamond wire saw cutting hard rock" class="h-44 w-full object-cover">
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2">Diamond Rock Cutting</h3>
+                    <ul class="text-sm text-gray-600 mb-4 list-disc pl-5 space-y-1">
+                        <li>High‑precision diamond wire saw technology</li>
+                        <li>Cuts hard rock with minimal waste</li>
+                        <li>Safe and efficient operation</li>
+                        <li>Ideal for quarrying and large-scale projects</li>
+                    </ul>
+                    <a href="contact.html"
+                        class="mt-auto inline-block bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold text-center hover:bg-red-700 transition self-start">Inquiry
+                        →</a>
+                </div>
+            </article>
+
+            <!-- 4. Chemical Rock Cutting -->
+            <article class="bg-white rounded-lg shadow-md overflow-hidden hover-lift hidden-init flex flex-col"
+                data-animate="fadeInUp">
+                <img src="images/s4.avif" alt="Expansive chemical for rock splitting" class="h-44 w-full object-cover">
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2">Chemical Rock Cutting</h3>
+                    <ul class="text-sm text-gray-600 mb-4 list-disc pl-5 space-y-1">
+                        <li>Expansive chemicals for controlled splitting</li>
+                        <li>No vibration, no noise, no dust</li>
+                        <li>Perfect for environmentally sensitive areas</li>
+                        <li>Precision fracture without explosives</li>
+                    </ul>
+                    <a href="contact.html"
+                        class="mt-auto inline-block bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold text-center hover:bg-red-700 transition self-start">Inquiry
+                        →</a>
+                </div>
+            </article>
+
+            <!-- 5. Concrete Pile Breaking -->
+            <article class="bg-white rounded-lg shadow-md overflow-hidden hover-lift hidden-init flex flex-col"
+                data-animate="fadeInUp">
+                <img src="images/s5.webp" alt="Hydraulic pile breaking machine" class="h-44 w-full object-cover">
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2">Pile Breaking</h3>
+                    <ul class="text-sm text-gray-600 mb-4 list-disc pl-5 space-y-1">
+                        <li>Hydraulic pile cropping for foundations</li>
+                        <li>Clean break without damaging reinforcement</li>
+                        <li>Rapid execution and reduced labor</li>
+                        <li>Suitable for all pile diameters</li>
+                    </ul>
+                    <a href="contact.html"
+                        class="mt-auto inline-block bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold text-center hover:bg-red-700 transition self-start">Inquiry
+                        →</a>
+                </div>
+            </article>
+
+            <!-- 6. Core Cutting Service -->
+            <article class="bg-white rounded-lg shadow-md overflow-hidden hover-lift hidden-init flex flex-col"
+                data-animate="fadeInUp">
+                <img src="images/s6.webp" alt="Core drilling machine cutting concrete" class="h-44 w-full object-cover">
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2">Core Cutting</h3>
+                    <ul class="text-sm text-gray-600 mb-4 list-disc pl-5 space-y-1">
+                        <li>Drilling precise circular openings in concrete</li>
+                        <li>For plumbing, electrical, HVAC installations</li>
+                        <li>Diamond core bits for clean, accurate cuts</li>
+                        <li>Minimal noise and dust generation</li>
+                    </ul>
+                    <a href="contact.html"
+                        class="mt-auto inline-block bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold text-center hover:bg-red-700 transition self-start">Inquiry
+                        →</a>
+                </div>
+            </article>
+
+            <!-- 7. Rock Control Blasting -->
+            <article class="bg-white rounded-lg shadow-md overflow-hidden hover-lift hidden-init flex flex-col"
+                data-animate="fadeInUp">
+                <img src="images/s7.webp" alt="Controlled rock blasting operation" class="h-44 w-full object-cover">
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2">Rock Control Blasting</h3>
+                    <ul class="text-sm text-gray-600 mb-4 list-disc pl-5 space-y-1">
+                        <li>Safe, controlled blasting for mass excavation</li>
+                        <li>Minimized fly rock and vibration</li>
+                        <li>Experienced blasting engineers</li>
+                        <li>Optimized fragmentation for easy removal</li>
+                    </ul>
+                    <a href="contact.html"
+                        class="mt-auto inline-block bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold text-center hover:bg-red-700 transition self-start">Inquiry
+                        →</a>
+                </div>
+            </article>
+
+            <!-- 8. Demolition Services -->
+            <article class="bg-white rounded-lg shadow-md overflow-hidden hover-lift hidden-init flex flex-col"
+                data-animate="fadeInUp">
+                <img src="images/demolition.webp" alt="Building demolition with excavator"
+                    class="h-44 w-full object-cover">
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2">Demolition Services</h3>
+                    <ul class="text-sm text-gray-600 mb-4 list-disc pl-5 space-y-1">
+                        <li>Structural demolition of buildings and concrete</li>
+                        <li>Debris removal and site clearance</li>
+                        <li>Heavy equipment and skilled operators</li>
+                        <li>Safety protocols and environmental care</li>
+                    </ul>
+                    <a href="contact.html"
+                        class="mt-auto inline-block bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold text-center hover:bg-red-700 transition self-start">Inquiry
+                        →</a>
+                </div>
+            </article>
+
+            <!-- 9. Soil Excavation -->
+            <article class="bg-white rounded-lg shadow-md overflow-hidden hover-lift hidden-init flex flex-col"
+                data-animate="fadeInUp">
+                <img src="images/s9.webp" alt="Excavator digging soil" class="h-44 w-full object-cover">
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2">Soil Excavation</h3>
+                    <ul class="text-sm text-gray-600 mb-4 list-disc pl-5 space-y-1">
+                        <li>Bulk earthwork, trenching, and leveling</li>
+                        <li>Site preparation for construction</li>
+                        <li>Efficient material handling and removal</li>
+                        <li>Precision grading and backfilling</li>
+                    </ul>
+                    <a href="contact.html"
+                        class="mt-auto inline-block bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold text-center hover:bg-red-700 transition self-start">Inquiry
+                        →</a>
+                </div>
+            </article>
+
+            <!-- 10. JCB Mini Excavator -->
+            <article class="bg-white rounded-lg shadow-md overflow-hidden hover-lift hidden-init flex flex-col"
+                data-animate="fadeInUp">
+                <img src="images/jcb_mini.webp" alt="Compact JCB mini excavator" class="h-44 w-full object-cover">
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2">JCB Mini Excavator</h3>
+                    <ul class="text-sm text-gray-600 mb-4 list-disc pl-5 space-y-1">
+                        <li>Compact excavator for confined sites</li>
+                        <li>Ideal for landscaping and small projects</li>
+                        <li>Easy transport and maneuverability</li>
+                        <li>Low ground pressure for minimal damage</li>
+                    </ul>
+                    <a href="contact.html"
+                        class="mt-auto inline-block bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold text-center hover:bg-red-700 transition self-start">Inquiry
+                        →</a>
+                </div>
+            </article>
+
+            <!-- 11. Excavators on Hire -->
+            <article class="bg-white rounded-lg shadow-md overflow-hidden hover-lift hidden-init flex flex-col"
+                data-animate="fadeInUp">
+                <img src="images/s10.webp" alt="Large hydraulic excavator on site" class="h-44 w-full object-cover">
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2">Excavators on Hire</h3>
+                    <ul class="text-sm text-gray-600 mb-4 list-disc pl-5 space-y-1">
+                        <li>Large fleet of hydraulic excavators</li>
+                        <li>Various sizes for different needs (20-ton to 50-ton)</li>
+                        <li>Competitive rates and well-maintained machines</li>
+                        <li>Experienced operators available</li>
+                    </ul>
+                    <a href="contact.html"
+                        class="mt-auto inline-block bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold text-center hover:bg-red-700 transition self-start">Inquiry
+                        →</a>
+                </div>
+            </article>
+
+            <!-- 12. Power Zenset -->
+            <article class="bg-white rounded-lg shadow-md overflow-hidden hover-lift hidden-init flex flex-col"
+                data-animate="fadeInUp">
+                <img src="images/power.webp" alt="Diesel generator set on site" class="h-44 w-full object-cover">
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2">Power Zenset</h3>
+                    <ul class="text-sm text-gray-600 mb-4 list-disc pl-5 space-y-1">
+                        <li>Generator sets for remote site power</li>
+                        <li>Reliable power supply for tools and equipment</li>
+                        <li>Fuel-efficient and quiet operation</li>
+                        <li>Range from 15 kVA to 125 kVA</li>
+                    </ul>
+                    <a href="contact.html"
+                        class="mt-auto inline-block bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold text-center hover:bg-red-700 transition self-start">Inquiry
+                        →</a>
+                </div>
+            </article>
+
+            <!-- 13. Hitech Breaker -->
+            <article class="bg-white rounded-lg shadow-md overflow-hidden hover-lift hidden-init flex flex-col"
+                data-animate="fadeInUp">
+                <img src="images/hitech.avif" alt="Hydraulic breaker attached to excavator"
+                    class="h-44 w-full object-cover">
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2">Hitech Breaker</h3>
+                    <ul class="text-sm text-gray-600 mb-4 list-disc pl-5 space-y-1">
+                        <li>Hydraulic rock breakers for heavy demolition</li>
+                        <li>High impact force for concrete and rock</li>
+                        <li>Attachment for excavators, quick coupling</li>
+                        <li>Low noise and vibration models available</li>
+                    </ul>
+                    <a href="contact.html"
+                        class="mt-auto inline-block bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold text-center hover:bg-red-700 transition self-start">Inquiry
+                        →</a>
+                </div>
+            </article>
+
+            <!-- 14. Tractor Compressor -->
+            <article class="bg-white rounded-lg shadow-md overflow-hidden hover-lift hidden-init flex flex-col"
+                data-animate="fadeInUp">
+                <img src="images/compressor-machine-1659348381736-500x500.webp" alt="Tractor mounted air compressor"
+                    class="h-44 w-full object-cover">
+                <div class="p-4 flex flex-col flex-grow">
+                    <h3 class="font-bold text-xl mb-2">Tractor Compressor</h3>
+                    <ul class="text-sm text-gray-600 mb-4 list-disc pl-5 space-y-1">
+                        <li>Air compressors for drilling and pneumatic tools</li>
+                        <li>Mobile and robust for tough terrain</li>
+                        <li>Ideal for construction and mining</li>
+                        <li>Reliable performance with low maintenance</li>
+                    </ul>
+                    <a href="contact.html"
+                        class="mt-auto inline-block bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold text-center hover:bg-red-700 transition self-start">Inquiry
+                        →</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+    
+    <!-- IMPROVED WHY CHOOSE US -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+    
+            <h2 class="text-4xl font-bold mb-6">
+                Why <span class="text-red-600">Choose Us</span>
+            </h2>
+    
+            <p class="text-gray-600 max-w-2xl mx-auto mb-10">
+                We bring reliability, expertise, and cutting-edge technology together
+                to deliver safe, efficient, and high-quality project execution.
+            </p>
+    
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+    
+                <div class="p-6 bg-gray-50 rounded-xl shadow hover-lift">
+                    <i class="fas fa-award text-red-600 text-3xl mb-3"></i>
+                    <h4 class="font-semibold">30+ Years Experience</h4>
+                    <p class="text-sm text-gray-600 mt-2">Proven expertise in complex projects</p>
+                </div>
+    
+                <div class="p-6 bg-gray-50 rounded-xl shadow hover-lift">
+                    <i class="fas fa-cogs text-red-600 text-3xl mb-3"></i>
+                    <h4 class="font-semibold">Modern Machinery</h4>
+                    <p class="text-sm text-gray-600 mt-2">Advanced tools for precision work</p>
+                </div>
+    
+                <div class="p-6 bg-gray-50 rounded-xl shadow hover-lift">
+                    <i class="fas fa-shield-alt text-red-600 text-3xl mb-3"></i>
+                    <h4 class="font-semibold">Safety First</h4>
+                    <p class="text-sm text-gray-600 mt-2">Strict compliance with safety standards</p>
+                </div>
+    
+                <div class="p-6 bg-gray-50 rounded-xl shadow hover-lift">
+                    <i class="fas fa-clock text-red-600 text-3xl mb-3"></i>
+                    <h4 class="font-semibold">On-Time Delivery</h4>
+                    <p class="text-sm text-gray-600 mt-2">Efficient project management</p>
+                </div>
+    
+                <div class="p-6 bg-gray-50 rounded-xl shadow hover-lift">
+                    <i class="fas fa-hand-holding-usd text-red-600 text-3xl mb-3"></i>
+                    <h4 class="font-semibold">Transparent Pricing</h4>
+                    <p class="text-sm text-gray-600 mt-2">No hidden costs</p>
+                </div>
+    
+                <div class="p-6 bg-gray-50 rounded-xl shadow hover-lift">
+                    <i class="fas fa-headset text-red-600 text-3xl mb-3"></i>
+                    <h4 class="font-semibold">24/7 Support</h4>
+                    <p class="text-sm text-gray-600 mt-2">Always available for your needs</p>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+        <footer class="bg-white text-black py-12 border-t-4 border-red-600 hidden-init" data-animate="fadeInUp">
+            <div class="container mx-auto px-4 sm:px-6 grid md:grid-cols-4 gap-8">
+                <div>
+                    <a href="index.html"><img src="images/melogio-removebg-preview.webp" alt="mahadeshwara enterprises Logo"
+                            class="h-21 mr-2"></a>
+                    <p class="text-sm opacity-80">Rock cutting & demolition experts.</p>
+                    <p class="text-sm opacity-80">Precision since 1994.</p>
+        
+                    <div class="mt-4">
+                        <h4 class="font-bold mb-2 text-red-600">Follow us</h4>
+                        <div class="flex space-x-4 text-2xl">
+                            <a href="#" class="hover:text-red-600"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="hover:text-red-600"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="hover:text-red-600"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="hover:text-red-600"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="hover:text-red-600"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-red-600">Quick links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-red-600">Home</a></li>
+                        <li><a href="about.html" class="hover:text-red-600">About</a></li>
+                        <li><a href="services.html" class="hover:text-red-600">Services</a></li>
+                        <li><a href="machinenry.html" class="hover:text-red-600">Machinery</a></li>
+                        <li><a href="gallery.html" class="hover:text-red-600">Gallery</a></li>
+                        <li><a href="projects.html" class="hover:text-red-600">Projects</a></li>
+        
+                        <li><a href="faq.html" class="hover:text-red-600">FAQ</a></li>
+                        <li><a href="contact.html" class="hover:text-red-600">Contact</a></li>
+        
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-red-600">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="services.html" class="hover:text-red-600">Rock Cutting</a></li>
+                        <li><a href="services.html" class="hover:text-red-600">Concrete Cutting</a></li>
+                        <li><a href="services.html" class="hover:text-red-600">Diamond Rock Cutting</a></li>
+                        <li><a href="services.html" class="hover:text-red-600">Rock Cutting – Chemical Method</a></li>
+                        <li><a href="services.html" class="hover:text-red-600">Concrete Pile Breaking Service</a></li>
+                        <li><a href="services.html" class="hover:text-red-600">Core Cutting Service</a></li>
+                        <li><a href="services.html" class="hover:text-red-600">Rock Control Blasting</a></li>
+                        <li><a href="services.html" class="hover:text-red-600">Demolition Services</a></li>
+                        <li><a href="services.html" class="hover:text-red-600">Soil Excavation</a></li>
+                        <li><a href="services.html" class="hover:text-red-600">JCB Mini Excavator</a></li>
+                        <li><a href="services.html" class="hover:text-red-600">Excavators on Hire</a></li>
+                        <li><a href="services.html" class="hover:text-red-600">Power Zenset</a></li>
+                        <li><a href="services.html" class="hover:text-red-600">Hitech Breaker</a></li>
+                        <li><a href="services.html" class="hover:text-red-600">Tractor Compressor</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 class="font-bold mb-4 text-red-600">Get in touch</h4>
+                    <div class="flex items-start gap-2 mb-2"><i class="fas fa-map-marker-alt text-red-500 mt-1"></i><a
+                            href="https://maps.google.com/?q=#45 Nagarakatte Village NG Halli Post Hosadurga Chitradurga Karnataka 577526"
+                            target="_blank" class="hover:text-red-600">#26, 10th Cross, 1st Main, Rajiv Gandhinagar,
+                            Laggere,Bangalore 560059</a>
+        
+        
+        
+                    </div>
+                    <div class="flex items-center gap-2 mb-2"><i class="fas fa-phone-alt text-red-500"></i><a
+                            href="tel:+917795404443" class="hover:text-red-600">+91 98450 89210</a></div>
+                    <div class="flex items-center gap-2 mb-2"><i class="fas fa-envelope text-red-500"></i><a
+                            href="mailto:info@nisargareservices.com" class="hover:text-red-600">info@mahadeshwara.in</a></div>
+        
+                </div>
+            </div>
+            <div class="border-t border-gray-300 mt-8 pt-4 text-center text-sm px-2">
+                © 2025 <a href="index.html" target="_blank" style="text-decoration:none; color:inherit;">Mahadeshwara
+                    Enterprises</a>. All
+                rights reserved | Designed and Developed By <a href="https://www.webvistara.co.in/" target="_blank"
+                    style="text-decoration:none; color:#dc2626;">Web Vistara</a>
+            </div>
+        </footer>
+
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        if (menuBtn && mobileNav) {
+            menuBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                mobileNav.classList.toggle('open');
+                const icon = menuBtn.querySelector('i');
+                if (mobileNav.classList.contains('open')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+            // close on link click
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileNav.classList.remove('open');
+                    const icon = menuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+        }
+
+        // Scroll animations
+        const animatedElements = document.querySelectorAll('.hidden-init');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const animationType = entry.target.dataset.animate || 'fadeInUp';
+                    entry.target.classList.add(`animate-${animationType}`);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -20px 0px' });
+        animatedElements.forEach(el => observer.observe(el));
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href').length > 1) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                        // close mobile nav if open
+                        if (mobileNav && mobileNav.classList.contains('open')) {
+                            mobileNav.classList.remove('open');
+                            const icon = menuBtn.querySelector('i');
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                }
+            });
+        });
+
+        window.addEventListener('load', function () {
+                const loader = document.getElementById('page-loader');
+                if (loader) loader.classList.add('fade-out');
+            });
+
+    </script>
+</body>
+</html>
